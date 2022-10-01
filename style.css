@@ -166,6 +166,10 @@ form button:hover {
     border-radius: 35px;
 }
 
+.trash-btn {
+    margin-right: 10px;
+}
+
 .complete-btn {
     background-color: #55acee;
     color: #FFF;
@@ -182,7 +186,7 @@ form button:hover {
 }
 
 .todo-item {
-    padding: 0rem 0.5rem;
+    padding: 0rem 1rem;
     line-break: anywhere;
 }
 
