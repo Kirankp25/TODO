@@ -1,84 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
     <title>MyTODO</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,user-scalable=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
 
     <link rel="stylesheet" href="style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="main_heading">
-            <h1>MyTODO</h1>
-        </div>
+      <div class="main_heading">
+        <h1>MyTODO</h1>
+      </div>
     </header>
 
-
     <div class="blue" id="Modal">
-        <div class="content" id="content">
-            <span id="modal-text">
-        
-      </span>
-            <!-- <button onclick="closemodal()" class="modal-btn">x</button> -->
-        </div>
+      <div class="content" id="content">
+        <span id="modal-text"> </span>
+        <!-- <button onclick="closemodal()" class="modal-btn">x</button> -->
+      </div>
     </div>
     <!-- <span class="todayDate">Day <span id="d1"></span></span> -->
     <form class="todoform">
-        <input type="text" placeholder="Add a new Task .." class="todo-input" required />
-        <div class="abc">
-            <button class="todo-button" type="submit">
-      <i class="fas fa-plus-square"></i>
-    </button>
-            <div class="select">
-                <select name="todos" class="filter-todo " style="color:rgb(8, 5, 5);">
-        <option value="all" style="color:black;">All</option>
-        <option value="completed" style="color:black;">Completed</option>
-        <option value="incomplete" style="color:black;">Incomplete</option>
-      </select>
-            </div>
+      <input
+        type="text"
+        placeholder="Add a new Task .."
+        class="todo-input"
+        required
+      />
+      <div class="abc">
+        <button class="todo-button" type="submit">
+          <i class="fas fa-plus-square"></i>
+        </button>
+        <div class="select">
+          <select name="todos" class="filter-todo" style="color: rgb(8, 5, 5)">
+            <option value="all" style="color: black">All</option>
+            <option value="completed" style="color: black">Completed</option>
+            <option value="incomplete" style="color: black">Incomplete</option>
+          </select>
         </div>
+      </div>
     </form>
     <div class="todo-container">
-        <ul class="todo-list"></ul>
+      <ul class="todo-list"></ul>
     </div>
     <button class="delete-all" onclick="show_alert()">Delete All</button>
 
-    <div class="confirmation_box hide " id="confirmation_box">
-        <div class="optbox_header">
-            <i class="fas fa-times" onclick="goback()"></i>
-        </div>
-        <p>Are you sure..?</p>
-        <div class="option_box">
-            <div class="proceed" onclick="deleteAll();">Yes</div>
-            <div class="donot_proceed" onclick="goback()">No</div>
-        </div>
+    <div class="confirmation_box hide" id="confirmation_box">
+      <div class="optbox_header">
+        <i class="fas fa-times" onclick="goback()"></i>
+      </div>
+      <p>Are you sure..?</p>
+      <div class="option_box">
+        <div class="proceed" onclick="deleteAll();">Yes</div>
+        <div class="donot_proceed" onclick="goback()">No</div>
+      </div>
     </div>
 
     <footer class="footer">
-        <div class="social-media">
-            <!-- instagram -->
-            <a class="link" href="https://www.instagram.com/Kirankp25" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="instagram.jfif" alt="instagram" /></a>
-            <!-- linkedin -->
-            <a class="link" href="https://www.linkedin.com/in/Kirankp25" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="linkedin.png" alt="linkedin" /></a>
-            <!-- gmail -->
-            <a class="link" href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="gmail.jfif" alt="gmail" /></a>
-            <!-- github -->
-            <a class="link" href="https://github.com/Kirankp25" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="github.png" alt="Github" /></a>
-
-        </div>
-        <p class="footer-desc">@Kiran Patil All Rights Reserved <strong></strong></a>
-        </p>
+      <div class="social-media">
+        <!-- instagram -->
+        <a
+          class="link"
+          href="https://www.instagram.com/Kirankp25"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><img class="social-icon" src="instagram.jfif" alt="instagram"
+        /></a>
+        <!-- linkedin -->
+        <a
+          class="link"
+          href="https://www.linkedin.com/in/Kirankp25"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><img class="social-icon" src="linkedin.png" alt="linkedin"
+        /></a>
+        <!-- gmail -->
+        <a
+          class="link"
+          href="https://mail.google.com/mail/u/0/#inbox"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><img class="social-icon" src="gmail.jfif" alt="gmail"
+        /></a>
+        <!-- github -->
+        <a
+          class="link"
+          href="https://github.com/Kirankp25"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><img class="social-icon" src="github.png" alt="Github"
+        /></a>
+      </div>
+      <p class="footer-desc">
+        @Kiran Patil All Rights Reserved <strong></strong>
+      </p>
     </footer>
->
     <script src="app.js"></script>
-
-</body>
-
+  </body>
 </html>
