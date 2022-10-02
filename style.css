@@ -103,6 +103,10 @@ form button:hover {
   color: var(--white);
 }
 
+.todo-input{
+  align-content: center;
+}
+
 .delete-all {
   background-color: red;
   color: white;
