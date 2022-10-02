@@ -92,6 +92,7 @@ form button,
     outline: none;
     width: fit-content;
     background-color: rgb(28, 27, 27);
+    color:white;
     padding: 11px;
     border-radius: 25px;
     border: none;
