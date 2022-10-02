@@ -1,83 +1,494 @@
-<!DOCTYPE html>
-<html lang="en">
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Roboto+Slab&family=Ubuntu:wght@400;500&display=swap&family=Open+Sans:ital,wght@1,300&display=swap&family=Raleway:wght@300&display=swap");
+/* @keyframes slideInFromLeft {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
 
-<head>
-    <meta charset="UTF-8" />
+@keyframes expand {
+  from {
+    transform: scale(0);
+    opacity: 0;
+    background: #12f006;
+  }
+}
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-    <title>MyTODO</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+@media screen and (min-width: 20.5em) {
+  .product-img {
+    width: 50%;
+    float: left;
+  }
+}
 
-    <link rel="stylesheet" href="style.css" />
-</head>
+:root {
+  --black: rgb(17, 16, 16);
+  --green: rgb(97, 127, 132);
+  --backgroundBlack: rgb(150, 202, 150);
+  --white: rgb(19, 17, 17);
+  --blue: rgb(75, 75, 96);
+}
 
-<body>
-    <header>
-        <div class="main_heading">
-            <h2>MyTODO</h2>
-        </div>
-    </header>
+html {
+  height: 100%;
+}
 
+.hide {
+  display: none;
+}
 
-    <div class="blue" id="Modal">
-        <div class="content" id="content">
-            <span id="modal-text">
-        
-      </span>
-            <!-- <button onclick="closemodal()" class="modal-btn">x</button> -->
-        </div>
-    </div>
-    <!-- <span class="todayDate">Day <span id="d1"></span></span> -->
-    <form class="todoform">
-        <input type="text" placeholder="Add a new Task .." class="todo-input" required />
-        <div class="abc">
-            <button class="todo-button" type="submit">
-      <i class="fas fa-plus-square"></i>
-    </button>
-            <div class="select">
-                <select name="todos" class="filter-todo " style="color:#fff;">
-        <option value="all" style="color:#fff;">All</option>
-        <option value="completed" style="color:#fff;">Completed</option>
-        <option value="incomplete" style="color:#fff;">Incomplete</option>
-      </select>
-            </div>
-        </div>
-    </form>
-    <div class="todo-container">
-        <ul class="todo-list"></ul>
-    </div>
-    <button class="delete-all" onclick="show_alert()">Delete All</button>
+.column {
+  width: 100%;
+}
 
-    <div class="confirmation_box hide " id="confirmation_box">
-        <div class="optbox_header">
-            <i class="fas fa-times" onclick="goback()"></i>
-        </div>
-        <p>Are you sure..?</p>
-        <div class="option_box">
-            <div class="proceed" onclick="deleteAll();">Yes</div>
-            <div class="donot_proceed" onclick="goback()">No</div>
-        </div>
-    </div>
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  color: #f3ebeb;
+  flex-direction: column;
+  background-color: #e1eaea;
+  /* animation: 1s ease-out 0s 1 slideInFromLeft; */
+}
 
-    <footer class="footer">
-        <div class="social-media">
-            <!-- instagram -->
-            <a class="link" href="https://www.instagram.com/Kirankp25" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="instagram.jfif" alt="instagram" /></a>
-            <!-- linkedin -->
-            <a class="link" href="https://www.linkedin.com/in/Kirankp25" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="linkedin.png" alt="linkedin" /></a>
-            <!-- gmail -->
-            <a class="link" href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="gmail.jfif" alt="gmail" /></a>
-            <!-- github -->
-            <a class="link" href="https://github.com/Kirankp25" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="github.png" alt="Github" /></a>
+body {
+  background-color: rgb(69, 69, 69);
+  color-scheme: var(--white);
+}
 
-        </div>
-        <p class="footer-desc">@Kiran Patil All Rights Reserved <strong></strong></a>
-        </p>
-    </footer>
-    <script src="app.js"></script>
+header {
+  letter-spacing: -1px;
+  background: #000;
+  color: rgb(255, 255, 255);
+  box-shadow: rgb(80, 78, 78) 5px 5px 20px;
+}
 
-</body>
+header,
+form {
+  min-height: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 10px;
+}
 
-</html>
+form input,
+form button,
+.delete-all {
+  padding: 10px 10px;
+  margin: 1rem 1rem;
+  font-size: 2rem;
+  outline: none;
+  width: fit-content;
+  background-color: rgb(0, 0, 0);
+  padding: 11px;
+  border-radius: 17px;
+  border: none;
+  box-shadow: rgb(0, 0, 0) 5px 5px 20px;
+}
+
+form button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+form button:hover {
+  background: #ffffff;
+  color: var(--white);
+}
+
+.todo-input{
+  align-content: center;
+}
+
+.delete-all {
+  background-color: red;
+  color: white;
+  width: 200px;
+  margin: auto auto 1.5rem;
+}
+
+.delete-all:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 40%;
+  list-style: none;
+  /* background: #ADADAD; */
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: rgb(255, 255, 255);
+  font-size: 2rem;
+  color: var(--black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+  outline: none;
+  border-radius: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  animation: expand 0.5s ease-in-out;
+}
+
+.main_heading h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 4rem;
+}
+
+.filter-todo {
+  padding: 1rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.todo li {
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  background: rgb(212, 67, 45);
+  color: #ffffff;
+  border: none;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 2rem;
+  border-radius: 150px;
+}
+
+.complete-btn {
+  background-color: #55acee;
+  color: #fff;
+  border-radius: 150px;
+}
+
+.edit-btn {
+  background-color: #c8c8c8;
+  border: none;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 2rem;
+  border-radius: 150px;
+  margin: 1rem;
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+  line-break: anywhere;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/*CUSTOM SELECTOR */
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+  text-align: center;
+  font-size: medium;
+  font-family: "Times New Roman", Times, serif;
+  border-radius: 20px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Custom Select */
+
+.select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  /* position: relative; */
+  overflow: hidden;
+  background-color: #000000;
+  outline: none;
+  color: #8e8de8;
+  font-family: "Poppins", sans-serif;
+  width: 12rem;
+  border-radius: 17px;
+  box-shadow: rgb(0, 0, 0) 5px 5px 20px;
+}
+
+.abc {
+  display: flex;
+  flex-direction: row;
+}
+
+.todoform {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer {
+  margin-top: auto;
+  width: 100%;
+  background-color: #e5f0cf;
+  text-align: center;
+  padding: 0.8rem;
+  font-family: "Lobster", cursive;
+}
+
+@media only screen and (max-width: 440px) {
+  .abc {
+    flex-direction: column;
+  }
+  .todoform {
+    flex-direction: column;
+  }
+}
+
+/* Arrow */
+
+/* Transition  */
+
+.select:hover::after {
+  background-color: #f7fffe;
+  color: #7977cc;
+}
+
+/* Footer */
+
+.footer h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: #fff;
+  height: 3.5rem;
+}
+
+.social-icon {
+  width: 4.5rem;
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+  border-color: #121417;
+  border-radius: 1rem;
+  /* box-shadow: 1px 1px 10px var(--backgroundGreen); */
+}
+
+.footer-desc {
+  color: rgb(16, 16, 16);
+  font-size: 1em;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  /* Stay in place */
+  z-index: 9;
+  /* Sit on top */
+  color: white;
+  opacity: 1;
+  top: 1;
+  height: fit-content;
+}
+
+.true {
+  display: block;
+}
+
+.content {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+  width: fit-content;
+  margin: auto;
+}
+
+.green {
+  background-color: rgb(15, 17, 15);
+}
+
+.red {
+  background-color: rgb(11, 11, 11);
+  border-radius: 0.25em;
+  font-family: "Poppins";
+}
+
+.blue {
+  background-color: rgb(0, 0, 255);
+}
+
+.modal-btn {
+  background-color: white;
+  color: black;
+  box-shadow: none;
+  border: 0.1em solid white;
+  padding: 0.02em 0.68em;
+  margin: 0 0 0.03em 0.5em;
+  border-radius: 0.25em;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.modal-btn:hover {
+  background-color: rgb(112, 112, 112);
+  color: white;
+}
+
+@keyframes slideIn {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.todayDate {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+.confirmation_box {
+  display: flex;
+  flex-direction: column;
+  background: #000000;
+  padding: 10px;
+  padding-bottom: 30px;
+  position: absolute;
+  align-self: center;
+  border-radius: 16px;
+}
+
+.optbox_header {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  height: 40px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.confirmation_box p {
+  margin: 20px;
+  font-size: 3.4rem;
+  font-family: "Lobster", cursive;
+}
+
+.proceed {
+  background: #fff;
+  padding: 0 10px 0 10px;
+  margin: 0 5px 0 5px;
+  border-radius: 10px;
+  font-family: "Lobster", cursive;
+  /* position: relative; */
+  text-align: center;
+  line-height: 60px;
+  font-size: 2.2rem;
+  color: #000;
+}
+
+.donot_proceed {
+  background: #fff;
+  padding: 0 10px 0 10px;
+  margin: 0 5px 0 5px;
+  border-radius: 10px;
+  font-family: "Lobster", cursive;
+  /* position: relative; */
+  text-align: center;
+  line-height: 60px;
+  font-size: 2.2rem;
+  color: #000;
+}
+
+.option_box {
+  display: flex;
+  justify-content: center;
+  left: 70px;
+  top: 50px;
+}
+
+.proceed:hover {
+  cursor: pointer;
+  background-color: rgb(147, 147, 147);
+}
+
+.donot_proceed:hover {
+  cursor: pointer;
+  background-color: rgb(147, 147, 147);
+}
+
+.optbox_header i {
+  font-size: 3rem;
+  color: #fff;
+  /* position: relative; */
+  /* background-color:red; */
+  width: 28px;
+  height: 26px;
+  align-self: flex-end;
+  border: none;
+}
+
+.optbox_header i:hover {
+  cursor: pointer;
+  color: rgb(118, 118, 118);
+}
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(92, 92, 92);
+  border-radius: 10px;
+}
