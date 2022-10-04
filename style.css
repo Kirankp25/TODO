@@ -23,23 +23,19 @@
   }
 }
 
-:root {
-  --black:
-  rgb(2 2 2);
-  --green:
-  rgb(97, 127, 132);
-  --backgroundBlack:
-  rgb(150, 202, 150);
-  --white:
-  rgb(19, 17, 17);
-  --blue:
-  rgb(75, 75, 96);
-}
-
-html {
+html,
+body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: #74ebd5;
+  background-image: linear-gradient(90deg, #74ebd5 0%, #9face6 100%);
+  /* animation: 1s ease-out 0s 1 slideInFromLeft; */
 }
-
 .hide {
   display: none;
 }
@@ -48,28 +44,16 @@ html {
   width: 100%;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  box-sizing: border-box;
-  display: flex;
-  color: #f3ebeb;
-  flex-direction: column;
-  background-color: #cbd3d3;
-  /* animation: 1s ease-out 0s 1 slideInFromLeft; */
-}
-
-body {
-  background-color: rgba(197, 200, 196, 0.578);
-  color-scheme: black;
+h1 {
+  color: #fff;
+  padding: 10px;
 }
 
 header {
-  letter-spacing: 5px;
-  background: #1f2423;
-  color: rgb(197, 190, 190);
-  box-shadow: rgba(91, 103, 104, 0.75) 5px 5px 20px;
+  letter-spacing: 1px;
+  color: #034077;
+  line-height: 1.5rem;
+  font-weight: bold;
 }
 
 header,
@@ -91,45 +75,40 @@ form button,
   font-size: 2rem;
   outline: none;
   width: fit-content;
-  background-color: rgb(229 232 230);
   padding: 15px;
   border-radius: 25px;
-  border: 5px solid #0f100f;
-  border-bottom: 8px solid #364632;
-  border-left: 8px solid #9ca29d;
+  border: 5px solid #034077;
+
   /* box-shadow: rgb(0, 0, 0) 5px 5px 20px; */
 }
 
 form button {
-  background: black;
+  background: linear-gradient(to right, #03a9f4, #1e88e5);
   width: 60px;
   height: 60px;
   border-radius: 50px;
 }
 form button:hover {
-  background: #ffffff;
-  color: var(--white);
+  background: #57b0fb;
 }
-#default{
-    display: block;
-    margin: auto;
-   text-align: center;
-    padding-top: 30px;
-    color: rgb(109, 100, 113);
-    font-weight: 700;
-    font-size: 25px;
-    font-family: 'Courier New', Courier, monospace;
-    
+#default {
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding-top: 30px;
+  color: #034077;
+  font-weight: 700;
+  font-size: 25px;
+  font-family: "Courier New", Courier, monospace;
 }
 .delete-all {
-  background-color: #2d3432;
+  background: linear-gradient(to right, #03a9f4, #1e88e5);
   color: white;
   width: 200px;
   margin: auto auto 1.5rem;
 }
 
 .delete-all:hover {
-  background-color: rgb(0, 0, 0);
 }
 
 .todo-container {
@@ -148,7 +127,7 @@ form button:hover {
 
 .todo {
   margin: 0.5rem;
-  background: rgb(255, 255, 255);
+  background: rgb(72, 162, 204);
   font-size: 2rem;
   color: var(--black);
   display: flex;
@@ -163,13 +142,14 @@ form button:hover {
 }
 
 .main_heading h2 {
-  font-family: "Raleway", sans-serif;
+  font-family: Ubuntu, sans-serif;
   font-size: 4rem;
 }
 
 .filter-todo {
   padding: 1rem;
   font-family: "Times New Roman", Times, serif;
+  color: rgb(58, 54, 54);
 }
 
 .todo li {
@@ -178,7 +158,7 @@ form button:hover {
 
 .trash-btn,
 .complete-btn {
-  background: rgb(212, 67, 45);
+  background: red;
   color: #ffffff;
   border: none;
   height: 50px;
@@ -234,9 +214,6 @@ form button:hover {
 /*CUSTOM SELECTOR */
 
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
   appearance: none;
   outline: 0;
   box-shadow: none;
@@ -246,8 +223,8 @@ select {
   font-size: medium;
   font-family: "Times New Roman", Times, serif;
   border-radius: 20px;
-  background-color: rgb(255, 255, 255);
-  color: white;
+  background: linear-gradient(to right, #03a9f4, #1e88e5);
+  color: #333;
   cursor: pointer;
 }
 
@@ -260,11 +237,12 @@ select {
   margin: 1rem;
   /* position: relative; */
   overflow: hidden;
-  background: rgb(33, 35, 34);
+  background: linear-gradient(to right, #03a9f4, #1e88e5);
   outline: none;
   color: #8e8de8;
   font-family: "Poppins", sans-serif;
   width: 10rem;
+  border: 5px solid #034077;
   border-radius: 28px;
   /* box-shadow: rgb(0, 0, 0) 5px 5px 20px; */
 }
@@ -272,9 +250,9 @@ select {
 .abc {
   display: flex;
   flex-direction: row;
-  border: 5px solid rgb(17, 18, 17);
-  border-radius:25px ;
-  border: 6px solid #161816;
+
+  border-radius: 25px;
+
   /* border-bottom: 5px solid #798777; */
   /* border-right: 5px solid #374b33; */
   /* border-top: 5px solid #798777; */
@@ -286,11 +264,10 @@ select {
 }
 
 .footer {
-  margin-top: auto;
-  width: 100%;
-  background-color:#353938; 
+  background: linear-gradient(to right, #226b80, #35b0ab);
   text-align: center;
-  padding: 0.8rem;
+  color: #f0f9ff;
+  padding: 0 50px;
   font-family: "Lobster", cursive;
 }
 
@@ -370,10 +347,6 @@ select {
   background-color: rgb(11, 11, 11);
   border-radius: 0.25em;
   font-family: "Poppins";
-}
-
-.blue {
-  background-color: rgb(0, 0, 255);
 }
 
 .modal-btn {
@@ -512,11 +485,7 @@ select {
   background: rgb(92, 92, 92);
   border-radius: 10px;
 }
-.footer {
-  min-height: auto;
-  padding-top: 0;
-  background: rgb(0, 1, 43);
-}
+
 .footer .box-container {
   display: flex;
   justify-content: center;
@@ -557,9 +526,8 @@ select {
   padding: 1rem 21rem;
 }
 .footer .box-container .box .share a {
-  height: 4rem;
-  width: 4rem;
   padding: 1rem;
+
   text-align: center;
   border-radius: 5rem;
   font-size: 1.7rem;
@@ -578,20 +546,24 @@ select {
 .footer .credit {
   padding: 1rem 0 0 0;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: "Nunito", sans-serif;
   font-weight: 600;
   color: #fff;
   border-top: 0.1rem solid #fff3;
 }
 .footer .credit a {
-  color: #ffae00;
+  color: #003c3d;
 }
 .footer .fa {
-  color: #e90606;
+  color: #004c83;
   margin: 0 0.3rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   animation: pound 0.35s infinite alternate;
+}
+.fab {
+  margin: 0 10px;
+  text-align: center;
 }
 @-webkit-keyframes pound {
   to {
@@ -615,11 +587,11 @@ select {
   }
 }
 
-@media only screen and (max-width:800px){
-  .abc{
+@media only screen and (max-width: 800px) {
+  .abc {
     flex-direction: row;
   }
-  .footer .box-container .box .share{
+  .footer .box-container .box .share {
     padding: 1rem;
     flex-direction: row;
     justify-content: center;
