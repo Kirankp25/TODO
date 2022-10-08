@@ -1,0 +1,120 @@
+/* GitHub Dark */
+:root {
+	--main-bg: #24292e;
+	--text-color: #efefef;
+	--accent-color: #f9826c;
+	--titlebar-bg: #1f2428;
+	--sidebar-bg: #24292e;
+	--sidebar-hover-bg: #1f2428;
+	--explorer-bg: #1f2428;
+	--explorer-hover-bg: #24292e;
+	--explorer-border: #161a1d;
+	--tabs-bg: #1f2428;
+	--tab-bg: #1f2428;
+	--tab-active-bg: #24292e;
+	--tab-border: #24292e;
+	--bottombar-bg: #24292e;
+	--bottombar-border: #1b1f23;
+	--button-bg: #176f2c;
+	--button-text: #dcffe4;
+	--bottombar-hover-bg: #4f4f52;
+	--scrollbar-track-bg: #24292e;
+	--scrollbar-thumb-bg: #333536;
+	--link-color: rgb(200, 240, 92);
+}
+
+/* Dracula */
+.dracula {
+	--main-bg: #2e3440;
+	--text-color: #efefef;
+	--accent-color: #88c0d0;
+	--titlebar-bg: #1f2428;
+	--sidebar-bg: #2e3440;
+	--sidebar-hover-bg: #434c5e;
+	--explorer-bg: #2e3440;
+	--explorer-hover-bg: #434c5e;
+	--explorer-border: rgba(136, 192, 208, 0.2);
+	--tabs-bg: #2e3440;
+	--tab-bg: #2e3440;
+	--tab-active-bg: #3b4252;
+	--tab-border: transparent;
+	--bottombar-bg: #3b4252;
+	--bottombar-border: transparent;
+	--button-bg: #434c5e;
+	--button-text: #d8dee9;
+	--bottombar-hover-bg: #4f4f52;
+	--scrollbar-track-bg: #2e3440;
+	--scrollbar-thumb-bg: #454647;
+}
+
+/* Ayu Dark */
+.ayu-dark {
+	--main-bg: #0a0e14;
+	--text-color: #747070;
+	--accent-color: #e6b450;
+	--titlebar-bg: #1f2428;
+	--sidebar-bg: #0a0e14;
+	--sidebar-hover-bg: #00010a;
+	--explorer-bg: #0a0e14;
+	--explorer-hover-bg: #00010a;
+	--explorer-border: transparent;
+	--tabs-bg: #0a0e14;
+	--tab-bg: #0a0e14;
+	--tab-active-bg: #0a0e14;
+	--tab-border: transparent;
+	--bottombar-bg: #0a0e14;
+	--bottombar-border: transparent;
+	--button-bg: #e6b450;
+	--button-text: #0a0e14;
+	--bottombar-hover-bg: #4f4f52;
+	--scrollbar-track-bg: #0a0e14;
+	--scrollbar-thumb-bg: #454647;
+}
+
+/* Ayu Mirage */
+/* [data-theme='ayu-mirage'] {
+	--main-bg: #1f2430;
+	--text-color: #efefef;
+	--accent-color: #e6b450;
+	--titlebar-bg: #1f2428;
+	--sidebar-bg: #1f2430;
+	--sidebar-hover-bg: #191e2a;
+	--explorer-bg: #1f2430;
+	--explorer-hover-bg: #191e2a;
+	--explorer-border: transparent;
+	--tabs-bg: #1f2430;
+	--tab-bg: #1f2430;
+	--tab-active-bg: #1f2430;
+	--tab-border: transparent;
+	--bottombar-bg: #1f2430;
+	--bottombar-border: transparent;
+	--button-bg: #e6b450;
+	--button-text: #1f2430;
+	--bottombar-hover-bg: #4f4f52;
+	--scrollbar-track-bg: #1f2430;
+	--scrollbar-thumb-bg: #454647;
+} */
+
+/* Nord */
+/* [data-theme='nord'] {
+	--main-bg: #2e3440;
+	--text-color: #efefef;
+	--accent-color: #88c0d0;
+	--titlebar-bg: #1f2428;
+	--sidebar-bg: #2e3440;
+	--sidebar-hover-bg: #434c5e;
+	--explorer-bg: #2e3440;
+	--explorer-hover-bg: #434c5e;
+	--explorer-border: rgba(136, 192, 208, 0.2);
+	--tabs-bg: #2e3440;
+	--tab-bg: #2e3440;
+	--tab-active-bg: #3b4252;
+	--tab-border: transparent;
+	--bottombar-bg: #3b4252;
+	--bottombar-border: transparent;
+	--button-bg: #434c5e;
+	--button-text: #d8dee9;
+	--bottombar-hover-bg: #4f4f52;
+	--scrollbar-track-bg: #2e3440;
+	--scrollbar-thumb-bg: #454647;
+} */

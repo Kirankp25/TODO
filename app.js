@@ -443,3 +443,12 @@ function show_alert() {
 function goback() {
   document.getElementById("confirmation_box").classList.add("hide");
 }
+
+function myFunction() {
+  var element = document.querySelectorAll('#toggleDark')
+  // element.classList.toggle("dark");
+  element.forEach(
+    i => i.classList.toggle('dark')
+  )
+}
+
