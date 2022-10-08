@@ -1,149 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
 
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
     <title>MyTODO</title>
-
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0,user-scalable=no"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
-      crossorigin="anonymous"
-    />
-
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0,user-scalable=no"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
-      crossorigin="anonymous"
-    />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <link rel="stylesheet" href="style.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <header>
-      <div class="main_heading">
-        <h2>MyTODO</h2>
-      </div>
+        <div class="main_heading">
+            <h2>MyTODO</h2>
+        </div>
     </header>
 
+
     <div class="blue" id="Modal">
-      <div class="content" id="content">
-        <span id="modal-text"> </span>
-        <!-- <button onclick="closemodal()" class="modal-btn">x</button> -->
-      </div>
+        <div class="content" id="content">
+            <span id="modal-text">
+        
+      </span>
+            <!-- <button onclick="closemodal()" class="modal-btn">x</button> -->
+        </div>
     </div>
     <!-- <span class="todayDate">Day <span id="d1"></span></span> -->
     <form class="todoform">
-      <input
-        type="text"
-        placeholder="Add a new Task .."
-        class="todo-input"
-        required
-      />
-      <div class="abc">
-        <button class="todo-button" type="submit">
-          <i class="fas fa-plus-square"></i>
-        </button>
-        <div class="select">
-          <select
-            name="todos"
-            class="filter-todo"
-            style="color: rgb(35, 32, 32)"
-          >
-            <option value="all" style="color: rgb(31, 27, 27)">All</option>
-            <option value="completed" style="color: rgb(43, 39, 39)">
-              Completed
-            </option>
-            <option value="incomplete" style="color: rgb(20, 18, 18)">
-              Incomplete
-            </option>
-          </select>
+        <input type="text" placeholder="Add a new Task .." class="todo-input" required />
+        <div class="abc">
+            <button class="todo-button" type="submit">
+      <i class="fas fa-plus-square"></i>
+    </button>
+            <div class="select">
+                <select name="todos" class="filter-todo " style="color:#fff;">
+        <option value="all" style="color:#fff;">All</option>
+        <option value="completed" style="color:#fff;">Completed</option>
+        <option value="incomplete" style="color:#fff;">Incomplete</option>
+      </select>
+            </div>
         </div>
-
-        <div class="content" id="content">
-          <span id="modal-text"> </span>
-          <!-- <button onclick="closemodal()" class="modal-btn">x</button> -->
-        </div>
-      </div>
     </form>
-    <!-- <span class="todayDate">Day <span id="d1"></span></span> -->
-
-    <div><h2 id="default">You don't have any task to do.</h2></div>
+      <div><h2 id="default">You don't have any task to do.</h2></div>
     <div class="todo-container">
-      <ul class="todo-list"></ul>
+        <ul class="todo-list"></ul>
     </div>
     <button class="delete-all" onclick="show_alert()">Delete All</button>
 
-    <div class="confirmation_box hide" id="confirmation_box">
-      <div class="optbox_header">
-        <i class="fas fa-times" onclick="goback()"></i>
-      </div>
-      <p>Are you sure..?</p>
-      <div class="option_box">
-        <div class="proceed" onclick="deleteAll();">Yes</div>
-        <div class="donot_proceed" onclick="goback()">No</div>
-      </div>
+    <div class="confirmation_box hide " id="confirmation_box">
+        <div class="optbox_header">
+            <i class="fas fa-times" onclick="goback()"></i>
+        </div>
+        <p>Are you sure..?</p>
+        <div class="option_box">
+            <div class="proceed" onclick="deleteAll();">Yes</div>
+            <div class="donot_proceed" onclick="goback()">No</div>
+        </div>
     </div>
 
-    <section class="footer">
-      <div class="box-container">
-        <div class="box">
-          <h3>About</h3>
-          <p>
-            Thank you for visiting. Connect with me over socials. <br />
-            <br />
-            TODO App enables you to create, update, Delete and Track your tasks.
-          </p>
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <h6>About</h6>
+              <p class="text-justify">This TODO App enables you to Create, Update, Delete and Read the tasks.<br>This in turn enables you to keep track of the events in a sechduled manner<br></p>
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <h6>Quick Links</h6>
+              <ul class="footer-links">
+                <li><a href="https://www.linkedin.com/in/Kirankp25">About Us</a></li>
+                <li><a href="https://www.linkedin.com/in/Kirankp25">Contact Us</a></li>
+                <li><a href="https://github.com/Kirankp25">Contribute</a></li>
+                 <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Sitemap</a></li> 
+              </ul>
+            </div>
+          </div>
+          <hr>
         </div>
-
-        <div class="box">
-          <h3>contact info</h3>
-          <p><i class="fas fa-envelope"></i>jnvkirankp25522@gmail.com</p>
-
-          <div class="share">
-            <a
-              href="https://www.linkedin.com/in/Kirankp25"
-              class="fab fa-linkedin"
-              target="_blank"
-            ></a>
-            <a
-              href="https://github.com/Yadvendra016/TODO.git"
-              class="fab fa-github"
-              target="_blank"
-            ></a>
-            <a href="" class="fab fa-twitter" target="_blank"></a>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
+           <a href="#">Kiran Patil</a>.
+              </p>
+            </div>
+  
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <ul class="social-icons">
+                <div class="social-media">
+                   
+              <li><a href="https://www.instagram.com/Kirankp25"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="https://mail.google.com/mail/u/0/#inbox"><i class="fab fa-google-plus-g"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/Kirankp25"><i class='fab fa-linkedin-in'></i></a></li>
+              <li><a  href="https://github.com/Kirankp25"><i class="fa fa-github"></i></a></li>   
+            
+        
+                </div>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-
-      <h1 class="credit">
-        All copyright <i class="fa fa-copyright" aria-hidden="true"></i>reserved
-        to <a href="https://github.com/Yadvendra016/TODO.git"> Kiran patil</a>
-      </h1>
-    </section>
+  </footer>
     <script src="app.js"></script>
-  </body>
+
+</body>
+
 </html>
